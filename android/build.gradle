@@ -2,13 +2,17 @@ group 'com.appleeducate.appreview'
 version '1.0-SNAPSHOT'
 
 buildscript {
+    ext {
+        agp_version = '7.0.3'
+    }
+
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
@@ -22,7 +26,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 31
 
     defaultConfig {
         minSdkVersion 16
@@ -35,6 +39,5 @@ android {
 
 dependencies {
     api 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.play:core:1.8.2'
     implementation 'com.google.android.play:review:2.0.1'
 }
